@@ -7,6 +7,10 @@ public class movement : MonoBehaviour
 {
     public float speed;
     public Text skor;
+    public float gravity;
+    public float jumpHeight;
+    Vector3 velocity;
+    bool isGrounded;
     int score = 0;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,15 @@ public class movement : MonoBehaviour
         }
         if (Input.GetKey (KeyCode.LeftArrow)) {
             transform.Translate (-speed,0,0);
+        }
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
     }
 
