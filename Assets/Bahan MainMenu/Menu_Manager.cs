@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu_Manager : MonoBehaviour
 {
     public GameObject MenuPanel;
     public GameObject CreditsPanel;
     public GameObject InstruksiPanel;
+    public GameObject LevelPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +16,7 @@ public class Menu_Manager : MonoBehaviour
         MenuPanel.SetActive(true);
         CreditsPanel.SetActive(false);
         InstruksiPanel.SetActive(false);
+        LevelPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,19 +27,32 @@ public class Menu_Manager : MonoBehaviour
 
     public void PlayButtonClicked()
     {
-        Application.LoadLevel("Labirin");
+        SceneManager.LoadScene("Labirin");
     }
     public void CreditsButtonClicked()
     {
         MenuPanel.SetActive(false);
         CreditsPanel.SetActive(true);
         InstruksiPanel.SetActive(false);
+        LevelPanel.SetActive(false);
     }
     public void InstruksiButtonClicked()
     {
         MenuPanel.SetActive(false);
         CreditsPanel.SetActive(false);
         InstruksiPanel.SetActive(true);
+        LevelPanel.SetActive(false);
+    }
+    public void LevelButtonClicked()
+    {
+        MenuPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
+        InstruksiPanel.SetActive(false);
+        LevelPanel.SetActive(true);
+    }
+    public void SatuButtonClicked()
+    {
+        SceneManager.LoadScene("Labirin");
     }
     public void Quit_Clicked()
     {
@@ -47,5 +63,6 @@ public class Menu_Manager : MonoBehaviour
         MenuPanel.SetActive(true);
         CreditsPanel.SetActive(false);
         InstruksiPanel.SetActive(false);
+        LevelPanel.SetActive(false);
     }
 }
