@@ -13,7 +13,7 @@ public class movement : MonoBehaviour
     bool isGrounded;
     int score = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }
@@ -57,4 +57,5 @@ public class movement : MonoBehaviour
             GameObject.Find ("suara wall").GetComponent<AudioSource>().Play();
         }
     }
+
 }

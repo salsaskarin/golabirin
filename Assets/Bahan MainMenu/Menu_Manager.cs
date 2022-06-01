@@ -54,6 +54,10 @@ public class Menu_Manager : MonoBehaviour
     {
         SceneManager.LoadScene("Labirin");
     }
+    public void DuaButtonClicked()
+    {
+        SceneManager.LoadScene("Labirin 2");
+    }
     public void Quit_Clicked()
     {
         Application.Quit();

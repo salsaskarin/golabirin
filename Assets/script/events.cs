@@ -11,10 +11,8 @@ public class events : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
-    /*
     public void NextGame2()
     {
         SceneManager.LoadScene("Labirin 2");
     }
-    */
 }
